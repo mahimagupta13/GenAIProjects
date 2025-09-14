@@ -21,6 +21,10 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r ./AINews/requirements.txt
+      
+      - name: Run script
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
 
       - name: Run script
         run: python  ./AINews/sendnews.py
