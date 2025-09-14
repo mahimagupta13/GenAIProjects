@@ -16,6 +16,7 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 SENDER_EMAIL = os.getenv("SENDER_EMAIL")
 RECIPIENT_EMAIL = os.getenv("RECIPIENT_EMAIL")
 APP_PASSWORD = os.getenv("APP_PASSWORD")
+print(GROQ_API_KEY)
 
 # Fail fast if required secrets are missing
 if not GROQ_API_KEY:
