@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 import time
 
 # Load environment variables from .env if present (for local dev)
-load_dotenv(override=True)
+load_dotenv(override=False)  # don’t override env vars from GitHub
 
 # ---- Environment Variables ----
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
