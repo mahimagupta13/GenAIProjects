@@ -2,7 +2,7 @@ name: Run sendnews.py daily
 
 on:
   schedule:
-    - cron: "30 3 * * *"   # 9:00 IST (adjust if needed)
+    - cron: "30 3 * * *"   # 9:00 IST
   workflow_dispatch:
 
 jobs:
@@ -25,4 +25,7 @@ jobs:
       - name: Run script
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
+          APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
         run: python ./AINews/sendnews.py
