@@ -14,7 +14,8 @@ load_dotenv(override=False)  # don’t override env vars from GitHub
 # ---- Environment Variables ----
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 SENDER_EMAIL = os.getenv("SENDER_EMAIL")
-RECIPIENT_EMAIL = os.getenv("RECIPIENT_EMAIL")
+#RECIPIENT_EMAIL = os.getenv("RECIPIENT_EMAIL")
+RECIPIENT_EMAIL = 'mahima.gupta13@gmail.com,amit.mics@gmail.com'
 APP_PASSWORD = os.getenv("APP_PASSWORD")
 print(GROQ_API_KEY)
 
