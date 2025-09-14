@@ -11,6 +11,17 @@ import time
 # Load environment variables from .env file
 load_dotenv(override=True)
 
+
+# Make sure secrets exist (from GitHub Actions env or .env file)
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+SENDER_EMAIL = os.getenv("SENDER_EMAIL")
+RECIPIENT_EMAIL = os.getenv("RECIPIENT_EMAIL")
+APP_PASSWORD = os.getenv("APP_PASSWORD")
+
+if not GROQ_API_KEY:
+    raise RuntimeError("❌ Missing GROQ_API_KEY environment variable")
+
+
 # Pre-defined list of popular AI/Gen AI news sites with their RSS feeds
 POPULAR_AI_SITES = [
     {
@@ -182,7 +193,7 @@ def fetch_top_news_from_sites(selected_sites):
 def summarize_article(text):
     url = 'https://api.groq.com/openai/v1/chat/completions'
     headers = {
-        'Authorization': f'Bearer {os.getenv("GROQ_API_KEY")}',
+        'Authorization': f'Bearer {GROQ_API_KEY.strip()}}',
         'Content-Type': 'application/json'
     }
     payload = {
