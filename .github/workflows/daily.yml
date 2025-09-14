@@ -20,7 +20,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r ../AINews/requirements.txt
+          pip install -r ../../AINews/requirements.txt
 
       - name: Run script
-        run: python AINews/sendnews.py
+        run: python  ../../AINews/sendnews.py
