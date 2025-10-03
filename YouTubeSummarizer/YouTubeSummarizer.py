@@ -8,6 +8,7 @@ from transformers import pipeline
 text_summary = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
 
 
+
 def extract_video_id(url):
     # Regex to extract the video ID from various YouTube URL formats
     regex = r"(?:youtube\.com\/(?:[^\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})"
